@@ -11,4 +11,4 @@
 <img src="image/IMG_5116.jpg">
 
 ## Demo-video link
-<a href="www.google.com" target="_blank" />
+www.google.com
