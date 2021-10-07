@@ -5,7 +5,10 @@
 
 (b) Färgen ska även kunna sättas i ”fade-läge” / ”regnbågs-läge” med KEY2, där samtliga möjliga färger och alla nyanser emellan ska skifta fram mjukt och fint av sig själva.
 
-(c) Hastigheten på ”fade-läget” (hur fort LEDen skiftar färg) ska gå att styra med trimpotentiometern.
+(c) Hastigheten på ”fade-läget” (hur fort LEDen skiftar färg) ska gå att styra med trim-potentiometern.
 
 ## Attachment
+<img src="image/IMG_5116.jpg">
 
+## Demo-video link
+https://drive.google.com/file/d/1XOZFVuAL82SsQWiFR10BGdIRiLIRF0w_/view?usp=sharing
