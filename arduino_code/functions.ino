@@ -39,11 +39,11 @@ void functionB_adjust_colors() {
 
 void functionB_color_plus() {
   init_color_red = init_color_red + 10;
-  init_color_green = init_color_green + 20;
-  init_color_blue = init_color_blue + 30;
+  init_color_green = init_color_green + 50;
+  init_color_blue = init_color_blue + 100;
 }
 
 void functionC_read_speed_value(){
   speedPinValue = analogRead(speedPin);
-  speedPinValue = map(speedPinValue, 275, 725, 50, 500);
+  speedPinValue = map(speedPinValue, 275, 725, 50, 800);
 }
