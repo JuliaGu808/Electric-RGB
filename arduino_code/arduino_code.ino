@@ -34,6 +34,11 @@ void loop() {
       lastTime = millis();
       functionB_adjust_colors();
       functionB_turnOn_rainbowLED();
+//      Serial.println();
+//      Serial.print(init_color_red);
+//      Serial.print(init_color_blue);
+//      Serial.print(init_color_green);
+//      Serial.println();
       functionB_color_plus();    
     }
   }

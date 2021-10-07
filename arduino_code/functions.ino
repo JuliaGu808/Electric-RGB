@@ -45,5 +45,5 @@ void functionB_color_plus() {
 
 void functionC_read_speed_value(){
   speedPinValue = analogRead(speedPin);
-  speedPinValue = map(speedPinValue, 275, 725, 50, 800);
+  speedPinValue = map(speedPinValue, 275, 725, 50, 500);
 }
