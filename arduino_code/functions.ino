@@ -17,7 +17,6 @@ void functionA_getPin_random() {
 
 void functionA_turnOn_oneLED() {
   digitalWrite(RANDOM_PIN, HIGH);
-  //inData[0]='\0';
 }
 
 void functionB_turnOn_rainbowLED() {

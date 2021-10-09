@@ -14,3 +14,4 @@ int speedPin = 2;
 int speedPinValue = 0;
 
 unsigned long lastTime = 0;
+unsigned long readTime = 0;
