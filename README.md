@@ -10,5 +10,3 @@
 ## Attachment
 <img src="image/IMG_5116.jpg">
 
-## Demo-video link
-https://drive.google.com/file/d/1XOZFVuAL82SsQWiFR10BGdIRiLIRF0w_/view?usp=sharing
