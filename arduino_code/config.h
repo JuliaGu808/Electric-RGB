@@ -4,7 +4,7 @@ enum RGB {
 
 int RANDOM_PIN = PIN_GREEN;
 
-int init_color_red = 20, init_color_green = 100, init_color_blue = 200;
+int color_gap = 1;
 
 const int buttonPin_1 = 8;
 const int buttonPin_2 = 13;

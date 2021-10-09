@@ -17,33 +17,53 @@ void functionA_getPin_random() {
 
 void functionA_turnOn_oneLED() {
   digitalWrite(RANDOM_PIN, HIGH);
+  //inData[0]='\0';
 }
 
 void functionB_turnOn_rainbowLED() {
   functionC_read_speed_value();
-  
+
   while ((millis() - lastTime) < speedPinValue) {
-    if(function_btns_state_change()) break;
+    if (function_btns_state_change()) break;
     functionC_read_speed_value();
-    analogWrite(PIN_GREEN, init_color_green);
-    analogWrite(PIN_RED, init_color_red);
-    analogWrite(PIN_BLUE, init_color_blue);
+    functionC_choose_one_rainbow();
+  }
+}
+
+void functionC_choose_one_rainbow(){
+  switch(RANDOM_PIN){
+    case 9: // green up
+      analogWrite(PIN_RED, 0); // do nothing
+      analogWrite(PIN_GREEN, color_gap); // fade up
+      analogWrite(PIN_BLUE, 255 - color_gap); // fade down
+      break;
+    case 10: // red up
+      analogWrite(PIN_RED, color_gap); // fade up
+      analogWrite(PIN_GREEN, 255 - color_gap); // fade down
+      analogWrite(PIN_BLUE, 0); // do nothing
+      break;
+    case 11: // blue up
+      analogWrite(PIN_RED, 255 - color_gap); // fade down
+      analogWrite(PIN_GREEN, 0); // do nothing
+      analogWrite(PIN_BLUE, color_gap); // fade up  
+      break;
+    default:
+      break;         
   }
 }
 
 void functionB_adjust_colors() {
-  if (init_color_red > 255) init_color_red = 0;
-  if (init_color_green > 255) init_color_green = 0;
-  if (init_color_blue > 255) init_color_blue = 0;
+  if (color_gap==256){
+    color_gap = 0;
+    RANDOM_PIN = RANDOM_PIN==11 ? 8 : RANDOM_PIN+1;
+  }
 }
 
 void functionB_color_plus() {
-  init_color_red = init_color_red + 10;
-  init_color_green = init_color_green + 50;
-  init_color_blue = init_color_blue + 100;
+  color_gap = color_gap + 1;
 }
 
-void functionC_read_speed_value(){
+void functionC_read_speed_value() {
   speedPinValue = analogRead(speedPin);
-  speedPinValue = map(speedPinValue, 275, 725, 50, 500);
+  speedPinValue = map(speedPinValue, 275, 725, 10, 100);
 }

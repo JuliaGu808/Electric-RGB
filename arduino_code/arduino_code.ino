@@ -1,5 +1,10 @@
 #include "config.h"
 
+int charIndex;
+char inChar;
+char inData[30];
+bool has_input = false;
+
 void setup() {
   Serial.begin(115200);
 
@@ -17,28 +22,41 @@ void setup() {
 void loop() {
     
   function_btns_state_change();
+
+  //labb4_read_input();
     
   function_turnOff_All();
 
-  if (buttonState_1 == HIGH ) {
+  
+
+  if (buttonState_1 == HIGH || inData[0]=='1') {
     functionA_getPin_random();
     while (true) {
       if(function_btns_state_change()) break;
-      functionA_turnOn_oneLED();     
+//      labb4_read_input();
+//      if(inData[0]!='1'){
+//        break;
+//      }
+//      if(has_input) {
+//        has_input = false;
+//        break;
+//      }
+      functionA_turnOn_oneLED(); 
+     // inData[0]='\0';
+    
     }
+    
   }
 
   if (buttonState_2 == HIGH ) {
+    functionA_getPin_random();
+    color_gap=0;
     while (true) {
       if(function_btns_state_change()) break;
+      
       lastTime = millis();
       functionB_adjust_colors();
       functionB_turnOn_rainbowLED();
-//      Serial.println();
-//      Serial.print(init_color_red);
-//      Serial.print(init_color_blue);
-//      Serial.print(init_color_green);
-//      Serial.println();
       functionB_color_plus();    
     }
   }
